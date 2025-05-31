@@ -53,3 +53,14 @@ Git сообщит об этом с помощью статуса modified: фа
 
 `git status` выводит все состояния, кроме `tracked`.
 
+Схема состояний и переходов для файлов:
+
+```mermaid
+graph LR;
+  untracked 		-- "git add" 		--> staged;
+  staged    		-- "git commit"     --> tracked/comitted;
+  staged			-- "изменить файл"	--> modified
+  tracked/comitted 	-- "изменить файл"	--> modified
+  modified			-- "git add"		--> staged;
+``` 
+
