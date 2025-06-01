@@ -142,3 +142,21 @@ git diff feature/diff~1 feature/diff
 git diff 2ea56ab~ 2ea56ab 
 ```
 
+`git merge <название_ветки>` выполнить слияние ветки.  
+`git branch -D название-ветки` удалить ветку после слияния.  
+`git branch -d название-ветки` более безопасное удаление. Удалит ветку только если она была полностью объединена с другой — то есть если две ветки стали (или изначально были) частью одной истории.  
+
+`git remote add origin git@github.com:%ИМЯ_АККАУНТА%/git-branches.git` связать внешний и локальный репозиторий.  
+`git push -u origin main` связывает снешнюю и локальную ветку.  
+`git push -u origin feature/merge-request` перенести локальную ветку на удаленный репозиторий. Выведется ссылка на создание pull request, но PR можно создать и из интерфейса guthub.  
+
+```
+$ git checkout main # перешли в main
+$ git pull # подтянули новые изменения в main
+$ git checkout my-branch # вернулись в рабочую ветку my-branch
+$ git merge main # влили main в новую ветку my-branch
+$ git push -u origin my-branch # отправили ветку my-branch в удалённый репозиторий 
+```
+
+`git remote rm origin` удалить текущий привязанный origin.  
+
